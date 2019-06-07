@@ -23,27 +23,25 @@ class AbstractFactoryTest extends TestCase
         $this->assertInstanceOf(MilRobot::class, $robot);
     }
 
-    public function testCanCreateShippableProduct()
+    public function testCancreateCivilRobot()
     {
-        $factory = new ProductFactory();
-        $product = $factory->createShippableProduct(150);
+        $factory = new RobotFactory();
+        $robot = $factory->createCivilRobot(150);
 
-        $this->assertInstanceOf(ShippableProduct::class, $product);
+        $this->assertInstanceOf(CivilRobot::class, $robot);
     }
 
-    public function testCanCalculatePriceForDigitalProduct()
+    public function testCanGetMilrobotName()
     {
-        $factory = new ProductFactory();
-        $product = $factory->createDigitalProduct(150);
+        $factory = new RobotFactory();
+        $robot = $factory->createMilRobot(150);
 
-        $this->assertEquals(150, $product->calculatePrice());
+    
     }
 
-    public function testCanCalculatePriceForShippableProduct()
+    public function testCanGetCivilRobotName()
     {
         $factory = new ProductFactory();
-        $product = $factory->createShippableProduct(150);
-
-        $this->assertEquals(200, $product->calculatePrice());
+        $robot = $factory->createShippableProduct(150);
     }
 }
