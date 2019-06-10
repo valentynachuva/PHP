@@ -11,37 +11,33 @@ namespace xampp\htdocs\robots\Test;
 use xampp\htdocs\robots\milrobot;
 use xampp\htdocs\robots\robotFactory;
 use xampp\htdocs\robots\civilrobot;
-use PHPUnit\Framework\TestCase;
+//use PHPUnit\Framework\TestCase;
 
-class AbstractFactoryTest extends TestCase
+class AbstractFactoryTest 
 {
+   
     public function testCanCreateMilRobot()
     {
         $factory = new RobotFactory();
-        $robot = $factory->createMilRobot(150);
+        $robot = $factory->createMilRobot();
 
         $this->assertInstanceOf(MilRobot::class, $robot);
     }
-
+ public function testCanGetMilRobotName()
+    {
+        $GetName = new GetName;
+    echo $GetName->GetRobotName();
+    }
     public function testCancreateCivilRobot()
     {
         $factory = new RobotFactory();
-        $robot = $factory->createCivilRobot(150);
+        $robot = $factory->createCivilRobot();
 
         $this->assertInstanceOf(CivilRobot::class, $robot);
     }
-
-    public function testCanGetMilrobotName()
+          public function testCanGetCivilRobotName()
     {
-        $factory = new RobotFactory();
-        $robot = $factory->createMilRobot(150);
-
-    
-    }
-
-    public function testCanGetCivilRobotName()
-    {
-        $factory = new ProductFactory();
-        $robot = $factory->createShippableProduct(150);
+        $GetName1 = new GetName;
+    echo $GetName1->GetRobotName();
     }
 }

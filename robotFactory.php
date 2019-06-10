@@ -7,11 +7,41 @@
  */
 
 namespace xampp\htdocs\robots;
-class RobotFactory{
-    public function createMilRobot($name):Robot{
-        return new createMilRobot ($name);
-    }
-    public function createCivilRobot($name):Robot{
-        return new createCivilRobot ($name);
-    }
+abstract class CreateRobot {
+
+ public $letters= "abcdefghijklmnopqrstuvwxyz";
+ public $numbers="0123456789";
+ protected function GetRobotName1() 
+ {
+     $name= "";
+        for ($i=0; $i<3; $i++)
+    {   $letters=mb_strtoupper($this->letters);
+        $randLetters= rand(0,26);
+        $name .= $letters [$randLetters];
+    } 
+$name1 ="";
+for ($j=0; $j<4; $j++)
+{
+$randNumbers = rand(0,9);
+$name1 .=$this->numbers[$randNumbers];
+$name1;
 }
+ return  $name. $name1. "\n";
+}  
+private function RebootName()
+{
+     $name= "";
+        for ($i=0; $i<3; $i++)
+    {   $letters=mb_strtoupper($this->letters);
+        $randLetters= rand(0,26);
+        $name .= $letters [$randLetters];
+    } 
+$name1 ="";
+for ($j=0; $j<4; $j++)
+{
+$randNumbers = rand(0,9);
+$name1 .=$this->numbers[$randNumbers];
+$name1;
+}
+}}
+

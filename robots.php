@@ -8,7 +8,6 @@
 
 namespace xampp\htdocs\robots;
 interface Robot{
-public function getname();
-public function resetname();
-public function rebootname();
+public function Run();
+public function Sing();
 }
