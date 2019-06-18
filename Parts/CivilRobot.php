@@ -6,8 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace xampp\htdocs\robots;
-interface Robot{
-public function Run();
-public function Sing();
+namespace \xampp\htdocs\robots\Parts;
+class CivilRobot extends Robots
+{
 }
